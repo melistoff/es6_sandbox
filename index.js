@@ -21,5 +21,9 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });
+
+    socket.on("get date", ()=>{
+        io.emit("set date", new Date());
+    })
 });
 http.listen(3000);
